@@ -1,0 +1,51 @@
+.loginBG {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 20px;
+    background-color: #ff0072;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-container input {
+    padding: 10px 20px;
+    width: 300px;
+    border: none;
+    border-radius: 10px;
+}
+
+.form-container label {
+    color: white;
+}
+
+.login-legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 30px;
+    border-color: white !important;;
+}
+
+.login-legend legend {
+    color: white;
+}
+
+.loginbutton {
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+}
