@@ -7,4 +7,5 @@ export default function home() {
     <buton type="button">Login</buton>
     <button type="button">Register</button>
   </div>
+  )
 }
