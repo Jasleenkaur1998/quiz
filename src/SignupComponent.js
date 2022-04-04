@@ -1,5 +1,6 @@
+import axios from 'axios';
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Signup.css";
 
 export default function SignupComponent() {
@@ -9,7 +10,8 @@ export default function SignupComponent() {
     let [name, setName] = React.useState("");
     let [email, setEmail] = React.useState("");
     let [password, setPassword] = React.useState("");
-  
+    let navigation = useNavigate();
+
     function changeEmail(event) {
       setEmail(event.target.value);
     }
@@ -22,8 +24,20 @@ export default function SignupComponent() {
       setName(event.target.value);
     }
   
-    function signup() {
-      alert('submitted');
+    function signup(event) {
+      event.preventDefault();
+      const user = {
+        name,
+        email,
+        password
+      }
+      axios.post('/api/1.0/users/signup', user).then((response) => {
+        alert(response.data.message);
+        navigation('../login');
+
+      }).catch(error => {
+        alert(error.message)
+      })
     }
 
     return (

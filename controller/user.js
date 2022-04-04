@@ -29,7 +29,8 @@ function signupUser(request, response) {
 }
 
 function loginUser(request, response) {
-    let user = req.body;
+    let user = request.body;
+    console.log(user, "user");
 
     User.findOne({ "email": user.email }).then((result) => {
 
@@ -37,7 +38,8 @@ function loginUser(request, response) {
             // If password matches 
             if (result.password == user.password) {
                 return response.status(200).json({
-                    data: result
+                    output: result,
+                    message: "Logged in"
                 })
             } else { // If password doesnot match
                 return response.status(200).json({
@@ -46,7 +48,7 @@ function loginUser(request, response) {
             }
 
         } else {
-            return response.status(404).json({
+            return response.status(401).json({
                 message: "User Not found"
             })
         }

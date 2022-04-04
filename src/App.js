@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import LoginComponent from './LoginComponent';
 import SignupComponent from './SignupComponent';
+import SubjectComponent from './SubjectComponent';
 
 export default function App() {
 
@@ -10,6 +11,7 @@ export default function App() {
             <Routes>
                 <Route path='/' element={<LoginComponent />} />
                 <Route path='/createAccount' element={<SignupComponent />} />
+                <Route path='/dashboard' element={<SubjectComponent />} />
             </Routes>
         </div>  
     )
