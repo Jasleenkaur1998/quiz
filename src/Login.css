@@ -5,7 +5,7 @@
     justify-content: center;
     height: 100vh;
     gap: 20px;
-    background-color: #ff0072;
+    background-color: #a92828;
 }
 
 .form-container {
@@ -48,4 +48,9 @@
     width: 100px;
     border-radius: 10px;
     border: none;
+}
+
+
+.heading {
+    color: white;
 }

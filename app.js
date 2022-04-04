@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors=require("cors");
 const user = require('./routes/user');
+const quiz = require('./routes/quiz');
 const mongoose = require('mongoose');
 require('dotenv').config()
 
@@ -21,6 +22,7 @@ const server = app.listen(process.env.PORT || 8080,
 });
 
 app.use('/api/1.0/users', user);
+app.use('/api/1.0/quiz', quiz);
 
 // This helps to host react js files
 app.use(express.static("public"));

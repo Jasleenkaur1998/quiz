@@ -7,6 +7,14 @@ const QuizSchema = new Schema({
         required: true
     },
     answer: {
+        type: Boolean,
+        required: true
+    },
+    options: [{
+        type: Boolean,
+        required: true
+    }],
+    category: {
         type: String,
         required: true
     }
