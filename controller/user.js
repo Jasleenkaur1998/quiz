@@ -42,7 +42,7 @@ function loginUser(request, response) {
                     message: "Logged in"
                 })
             } else { // If password doesnot match
-                return response.status(200).json({
+                return response.status(401).json({
                     message: "Password incorrect"
                 })
             }
