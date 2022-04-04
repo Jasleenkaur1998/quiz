@@ -12,6 +12,7 @@ export default function App() {
         <div>
             <Routes>
                 <Route path='/' element={<LoginComponent />} />
+                <Route path='/login' element={<LoginComponent />} />
                 <Route path='/createAccount' element={<SignupComponent />} />
                 <Route path='/dashboard' element={<SubjectComponent />} />
                 <Route path='/:category' element={ <QuestionsListComponent />} />
