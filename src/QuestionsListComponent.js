@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import QuestionSetComponent from './QuestionSetComponent';
 import "./questionlist.css";
 
@@ -9,6 +9,7 @@ export default function QuestionsListComponent() {
     const category = useParams();
     const [questions, setQuestions] = React.useState([]);
     const [score, setScore] = React.useState(0);
+    let navigation = useNavigate();
 
     React.useEffect(function () {
         axios.get(`/api/1.0/quiz/${category.category}`).then((response) => {
@@ -20,7 +21,8 @@ export default function QuestionsListComponent() {
     }, [category]);
 
     function calculateScore() {
-        alert(score);
+        localStorage.setItem('score', JSON.stringify(score));
+        navigation('../score');
     }
 
     return (
