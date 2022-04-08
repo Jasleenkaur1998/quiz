@@ -28,6 +28,7 @@ function createQuestion(request, response) {
         });
 }
 
+
 function fetchQuestionsByCategory(request, response) {
     let category = request.params.category;
     Quiz.find({ "category": category }).then((result) => {

@@ -1,0 +1,49 @@
+.main-score {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(243, 58, 58);
+    color: white;
+    flex-direction: column;
+}
+
+.user-name {
+    border-top: 1px solid white;
+    padding: 20px;
+    font-size: 40px;
+}
+
+
+.user-score {
+    border-bottom: 1px solid white;
+    padding: 20px;
+    font-size: 35px;
+}
+
+.scoreboard {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.score-list {
+    height: 100vh;
+    background: #65c976;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.score-name{ 
+    color: white;
+    font-size: 40px;
+}
+
+.score-list-container {
+    width: 500px;
+    border: 1px solid white;
+    padding: 20px;
+    text-align: center;
+}

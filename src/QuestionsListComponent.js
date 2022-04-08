@@ -22,6 +22,15 @@ export default function QuestionsListComponent() {
 
     function calculateScore() {
         localStorage.setItem('score', JSON.stringify(score));
+        let data = {
+            user: JSON.parse(localStorage.getItem('user'))._id,
+            score: score
+        }
+        axios.post("/api/1.0/score", data).then((response) => {
+            console.log(response.data);
+        }).catch(error => {
+            alert(error.message)
+        })
         navigation('../score');
     }
 

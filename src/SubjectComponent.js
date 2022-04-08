@@ -27,6 +27,8 @@ export default function SubjectComponent() {
           )
         })
       }
+
+      <Link to="../scoreboard">View ScoreBoard</Link>
     </section>
   )
 }

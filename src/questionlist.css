@@ -16,3 +16,7 @@
     border-radius: 20px;
     margin: auto;
 }
+
+.question-container h1 {
+    text-align: center;
+}

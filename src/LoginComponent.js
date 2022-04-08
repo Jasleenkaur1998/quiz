@@ -2,12 +2,15 @@ import axios from 'axios';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./Login.css";
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function LoginComponent() {
 
 
   let [email, setEmail] = React.useState("");
   let [password, setPassword] = React.useState("");
+
+  
   let navigation = useNavigate();
 
 
@@ -27,7 +30,10 @@ export default function LoginComponent() {
     }
     axios.post('/api/1.0/users/login', user).then((response) => {
       alert(response.data.message);
-      navigation('../dashboard');
+      localStorage.setItem('user', JSON.stringify(response.data.output));
+      setTimeout(() => {
+        navigation('../dashboard');
+      }, 1000);
 
     }).catch(error => {
       alert(error.message)
@@ -35,21 +41,46 @@ export default function LoginComponent() {
   }
 
   return (
-    <div className='loginBG'>
+    <div className="loginBG">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      {/* Same as */}
+      <ToastContainer />
       <h1 className="heading">Login here</h1>
       <div>
         <form className="form-container" onSubmit={login}>
-          <fieldset className='login-legend'>
+          <fieldset className="login-legend">
             <legend>Login</legend>
             <label>Email</label>
-            <input value={email} placeholder='Your Email' type="email" onChange={changeEmail}  required/>
+            <input
+              value={email}
+              placeholder="Your Email"
+              type="email"
+              onChange={changeEmail}
+              required
+            />
             <label>Password</label>
-            <input value={password} placeholder='Your Password' type="password" onChange={changePassword} required />
-            <button className='loginbutton'>Login</button>
+            <input
+              value={password}
+              placeholder="Your Password"
+              type="password"
+              onChange={changePassword}
+              required
+            />
+            <button className="loginbutton">Login</button>
             <Link to="/createAccount">Create Account</Link>
           </fieldset>
         </form>
       </div>
     </div>
-  )
+  );
 }
