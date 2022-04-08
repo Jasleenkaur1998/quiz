@@ -2,14 +2,37 @@
     border: 1px solid black;
     padding: 20px;
     border-radius: 20px;
-    background-color: burlywood;
+    background-color: #00bcd4;;
     width: 300px;
     text-align: center;
     cursor: pointer;
+
+}
+
+.subject-outercontainer {
+
+   display: flex;
+   flex-direction: column;
+   gap:20px;
+   text-align: center;
+   border-radius: 10px;
+   border-top: 1px solid white;
+   padding: 20px;
+   border-bottom: 1px solid white;
+
+}
+
+.subject-section:hover {
+
+    background-color: pink;
+    color: white !important;
+    transform: scale(1.1);
+    transition: 1s ease-in;
 }
 
 .subject-action {
     text-decoration: none;
+    color:white;
 }
 
 section {
@@ -19,5 +42,6 @@ section {
     gap: 50px;
     height: 100vh;
     flex-direction: column;
-    background-color: antiquewhite !important;
+    background-color: #e91e63ab !important;
 }
+

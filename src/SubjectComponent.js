@@ -17,7 +17,8 @@ export default function SubjectComponent() {
 
   return (
     <section>
-      <h1>CHOOSE YOUR SUBJECT</h1>
+     <div className="subject-outercontainer">
+     <h1>CHOOSE YOUR SUBJECT</h1>
       {
         subjectList.map((data) => {
           return (
@@ -29,6 +30,7 @@ export default function SubjectComponent() {
       }
 
       <Link to="../scoreboard">View ScoreBoard</Link>
+     </div>
     </section>
   )
 }
