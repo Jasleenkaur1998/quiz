@@ -34,7 +34,7 @@ export default function ScoreBoard() {
       {
         scoreBoard.slice(0, 6).map((data, index) => {
           return <div className='score-name'> 
-          {index}  {data.user.name} -  { data.score}
+          {index} -  {data.user.name} -  { data.score}
           </div>
         })
       }

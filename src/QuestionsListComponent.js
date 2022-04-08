@@ -37,6 +37,7 @@ export default function QuestionsListComponent() {
     return (
         <div className='question-container'>
             <h1>SET A TIMER OF 10 Minutes, Quiz expires</h1>
+            <p style={{ textAlign : "center"}}>Note: Negative marking is implemented for this quiz</p>
             {
             questions.map((data) => {
                 return <QuestionSetComponent getScore={(val) => setScore(val + score)} data={data} />

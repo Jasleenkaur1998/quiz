@@ -39,11 +39,14 @@
 .score-name{ 
     color: white;
     font-size: 40px;
+    border-bottom: 1px solid #20652b;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .score-list-container {
     width: 500px;
-    border: 1px solid white;
     padding: 20px;
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
