@@ -7,7 +7,7 @@ export default function ScoreBoard() {
 
   let [scoreBoard, setScoreBoard] = useState([]);
 
-  React.useEffect(function() {
+  useEffect(function() {
     axios.get(`/api/1.0/score`).then((response) => {
       console.log(response.data.output, "output");
       const sortedData = response.data.output.sort(compare);

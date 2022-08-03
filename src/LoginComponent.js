@@ -1,8 +1,7 @@
 import axios from 'axios';
-import React from 'react';
+import React from 'react'; 
 import { Link, useNavigate } from 'react-router-dom';
 import "./Login.css";
-import { ToastContainer, toast } from 'react-toastify';
 
 export default function LoginComponent() {
 
@@ -28,7 +27,7 @@ export default function LoginComponent() {
       email,
       password
     }
-    axios.post('/api/1.0/users/login', user).then((response) => {
+    axios.post('/api/1.0/users/login', user ).then((response) => {
       alert(response.data.message);
       localStorage.setItem('user', JSON.stringify(response.data.output));
       setTimeout(() => {
@@ -42,19 +41,6 @@ export default function LoginComponent() {
 
   return (
     <div className="loginBG">
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      {/* Same as */}
-      <ToastContainer />
       <h1 className="heading">Login here</h1>
       <div>
         <form className="form-container" onSubmit={login}>

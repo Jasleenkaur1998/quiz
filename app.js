@@ -9,8 +9,7 @@ require('dotenv').config()
 
 // This tells the browser to allow cross origin ports
 app.use(cors());
-
-app.use(express.json());
+ 
 
 mongoose.connect(process.env.MONGODB);
 mongoose.connection.on('connected',function(){
